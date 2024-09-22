@@ -1,257 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Chart</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+ 
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Chart for Cryptocurrencies</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        #top-menu {
-            background-color: #f1f3f6;
-            padding: 10px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            border-bottom: 1px solid #eaeaea;
-            z-index: 2;
-        }
-
-        #top-menu select,
-        #top-menu button {
-            padding: 5px 10px;
-            margin-left: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            cursor: pointer;
-            transition: background-color .3s;
-            color: #000;
-        }
-
-        #top-menu button {
-            background-color: #009fb5;
-            color: #fff;
-        }
-
-        #top-menu button:hover,
-        #top-menu select:hover {
-            background-color: #eaeaea;
-        }
-
-        #main-container {
-            display: flex;
-            flex-grow: 1;
-            overflow: hidden;
-        }
-
-        #technical-chart-coins {
-            background-color: #ffffff;
-            width: 175px;
-            overflow-y: auto;
-            border-right: 1px solid #eaeaea;
-            z-index: 1;
-        }
-
-        .technical-chart-coin>a {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #eaeaea;
-            text-decoration: none;
-            color: #000;
-            cursor: pointer;
-            transition: background-color .3s;
-        }
-
-        .technical-chart-coin>a:hover {
-            background-color: #ebfbf9;
-        }
-
-        .technical-chart-coin>a.coin-current {
-            background-color: #c4e7e3;
-        }
-
-        #technical-widget-container {
-            flex-grow: 1;
-            background-color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            position: relative;
-        }
-
-        #technical-widget {
-            flex-grow: 1;
-            width: 100%;
-        }
-
-        .coin-sprite-custom {
-            width: 25.6px;
-            height: 25.6px;
-            background-size: cover;
-            margin-right: 10px;
-        }
-
-        /* Dark Theme */
-        body.dark-theme {
-            background-color: #131722;
-            color: #eaeaea;
-        }
-
-        body.dark-theme #technical-chart-coins {
-            background-color: #131722;
-            color: #eaeaea;
-            border-color: #444;
-        }
-
-        body.dark-theme .technical-chart-coin>a {
-            color: #eaeaea;
-            border-color: #444;
-        }
-
-        body.dark-theme .technical-chart-coin>a:hover {
-            background-color: #444;
-        }
-
-        body.dark-theme .technical-chart-coin>a.coin-current {
-            background-color: #555;
-        }
-
-        body.dark-theme #top-menu {
-            background-color: #131722;
-            border-bottom-color: #444;
-        }
-
-        body.dark-theme #top-menu button {
-            background-color: #009fb5;
-        }
-
-        body.dark-theme #top-menu select {
-            background-color: #444;
-            color: #eaeaea;
-        }
-    </style>
-</head>
-
-<body>
+  <body>
     <div id="top-menu">
-        <select id="timezone-select">
-            <option value="Europe/London">UK</option>
-            <option value="Asia/Tehran">Iran</option>
-            <option value="Asia/Muscat">Oman</option>
-            <option value="Europe/Oslo">Norway</option>
-            <option value="Europe/Istanbul">Turkey</option>
-        </select>
-        <button id="theme-toggle">Dark</button>
+      <select id="timezone-select">
+        <option value="Europe/London">UK</option>
+        <option value="Asia/Tehran">Iran</option>
+        <option value="Asia/Muscat">Oman</option>
+        <option value="Europe/Oslo">Norway</option>
+        <option value="Europe/Istanbul">Turkey</option>
+      </select>
+      <button id="theme-toggle">Dark</button>
     </div>
 
     <div id="main-container">
-        <div id="technical-chart-coins">
-            <!-- Add the top 100 cryptocurrencies here -->
-            <div class="technical-chart-coin">
-                <a class="coin-current" data-symbol="Binance:BTCUSDT">
-                    <img class="coin-sprite-custom" src="bitcoin.png" alt="Bitcoin">
-                    <span>Bitcoin</span>
-                </a>
-            </div>
-            <div class="technical-chart-coin">
-                <a data-symbol="Binance:ETHUSDT">
-                    <img class="coin-sprite-custom" src="ethereum.png" alt="Ethereum">
-                    <span>Ethereum</span>
-                </a>
-            </div>
-            <!-- Repeat similar blocks for the top 100 cryptocurrencies -->
+      <div id="technical-chart-coins">
+        <div class="technical-chart-coin">
+          <a class="coin-current" data-symbol="BTCUSDT">
+            <img class="coin-sprite-custom" src="assets/img/bitcoin.png" alt="Bitcoin" />
+            <span>Bitcoin</span>
+          </a>
         </div>
+        <div class="technical-chart-coin">
+          <a data-symbol="ETHUSDT">
+            <img class="coin-sprite-custom" src="assets/img/ethereum.png" alt="Ethereum" />
+            <span>Ethereum</span>
+          </a>
+        </div>
+      </div>
 
-        <div id="technical-widget-container">
-            <div id="technical-widget"></div>
-        </div>
+      <div id="technical-widget-container">
+        <div id="technical-widget"></div>
+      </div>
     </div>
 
     <script src="https://s3.tradingview.com/tv.js"></script>
-    <script>
-        let tradingview;
-
-        const options = {
-            "symbol": "Binance:BTCUSDT",
-            "autosize": true,
-            "timezone": "Europe/London",
-            "theme": "Light",
-            "style": "1",
-            "locale": "en",
-            "toolbar_bg": "#f1f3f6",
-            "enable_publishing": false,
-            "withdateranges": true,
-            "hide_side_toolbar": false,
-            "hide_legend": false,
-            "timeframe": "1D",
-            "range": "1D",
-            "allow_symbol_change": true,
-            "container_id": "technical-widget",
-            "studies": ["RSI@tv-basicstudies"]
-        };
-
-        function loadTradingViewWidget() {
-            tradingview = new TradingView.widget(options);
-        }
-
-        function applySavedSettings() {
-            const savedTheme = localStorage.getItem('theme');
-            const savedTimezone = localStorage.getItem('timezone');
-            if (savedTheme) {
-                document.body.classList.toggle('dark-theme', savedTheme === 'dark');
-                options.theme = savedTheme === 'dark' ? 'Dark' : 'Light';
-                document.getElementById('theme-toggle').innerText = savedTheme === 'dark' ? 'Light' : 'Dark';
-            }
-            if (savedTimezone) {
-                document.getElementById('timezone-select').value = savedTimezone;
-                options.timezone = savedTimezone;
-            }
-        }
-
-        document.querySelectorAll(".technical-chart-coin > a").forEach(function (el) {
-            el.addEventListener("click", function () {
-                document.querySelector(".coin-current").classList.remove('coin-current');
-                el.classList.add('coin-current');
-                options.symbol = el.getAttribute('data-symbol');
-                tradingview.remove();
-                loadTradingViewWidget();
-            });
-        });
-
-        document.getElementById('theme-toggle').addEventListener('click', function () {
-            document.body.classList.toggle('dark-theme');
-            const currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-            options.theme = currentTheme === 'dark' ? 'Dark' : 'Light';
-            localStorage.setItem('theme', currentTheme);
-            this.innerText = currentTheme === 'dark' ? 'Light' : 'Dark';
-            tradingview.remove();
-            loadTradingViewWidget();
-        });
-
-        document.getElementById('timezone-select').addEventListener('change', function () {
-            options.timezone = this.value;
-            localStorage.setItem('timezone', this.value);
-            tradingview.remove();
-            loadTradingViewWidget();
-        });
-
-        window.onload = function () {
-            applySavedSettings();
-            loadTradingViewWidget();
-        };
-    </script>
-</body>
-
+<script src="assets/js/script.js"></script>
+  </body>
 </html>

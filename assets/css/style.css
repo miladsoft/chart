@@ -1,0 +1,149 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#top-menu {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+  transition: background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+#top-menu select,
+#top-menu button {
+  padding: 8px 15px;
+  margin-left: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#top-menu button {
+  background-color: rgba(0, 159, 181, 0.5);
+  color: #000000;
+}
+
+#top-menu button:hover,
+#top-menu select:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+#main-container {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+#technical-chart-coins {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.technical-chart-coin > a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+.technical-chart-coin > a:hover {
+  background-color: rgba(0, 159, 181, 0.2);
+  transform: scale(1.02);
+}
+
+.technical-chart-coin > a.coin-current {
+  background-color: rgba(0, 159, 181, 0.4);
+  transform: scale(1.03);
+}
+
+#technical-widget-container {
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+#technical-widget {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.coin-sprite-custom {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  margin-right: 12px;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: #1b1f2a;
+  color: #eaeaea;
+}
+
+body.dark-theme #technical-chart-coins {
+  background-color: rgba(19, 23, 34, 0.6);
+  border-color: rgba(68, 68, 68, 0.5);
+}
+
+body.dark-theme .technical-chart-coin > a {
+  color: #eaeaea;
+  border-color: rgba(68, 68, 68, 0.5);
+}
+
+body.dark-theme .technical-chart-coin > a:hover {
+  background-color: rgba(0, 159, 181, 0.4);
+  transform: scale(1.02);
+}
+
+body.dark-theme .technical-chart-coin > a.coin-current {
+  background-color: rgba(0, 159, 181, 0.6);
+}
+
+body.dark-theme #top-menu {
+  background-color: rgba(19, 23, 34, 0.6);
+  border-bottom-color: rgba(68, 68, 68, 0.5);
+}
+
+body.dark-theme #top-menu button {
+  background-color: rgba(0, 159, 181, 0.3);
+  color: #fff;
+}
+
+body.dark-theme #top-menu select {
+  background-color: #086a7c;
+  color: #eaeaea;
+}
+
+body.dark-theme #technical-widget-container {
+  background-color: rgba(19, 23, 34, 0.6);
+}
