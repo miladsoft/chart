@@ -1,6 +1,3 @@
-Here is a professional and comprehensive `README.md` for your project, including collaboration and improvement guidelines:
-
-```markdown
 # 📊 Technical Chart for Cryptocurrencies
 
 Welcome to the **Technical Chart** project! This repository provides a real-time cryptocurrency technical chart using the TradingView widget, allowing users to select different time zones and toggle between light and dark themes. The demo showcases a simple yet powerful interface that displays live charts for various cryptocurrencies like Bitcoin and Ethereum.
