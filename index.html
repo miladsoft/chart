@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Technical Chart</title>
     <link rel="stylesheet" href="assets/css/style.css" />
- 
-  </head>
 
-  <body>
+</head>
+
+<body>
     <div id="top-menu">
-      <select id="timezone-select">
-        <option value="Europe/London">UK</option>
-        <option value="Asia/Tehran">Iran</option>
-        <option value="Asia/Muscat">Oman</option>
-        <option value="Europe/Oslo">Norway</option>
-        <option value="Europe/Istanbul">Turkey</option>
-      </select>
-      <button id="theme-toggle">Dark</button>
+        <select id="timezone-select">
+            <option value="Europe/London">UK</option>
+            <option value="Asia/Tehran">Iran</option>
+            <option value="Asia/Muscat">Oman</option>
+            <option value="Europe/Oslo">Norway</option>
+            <option value="Europe/Istanbul">Turkey</option>
+        </select>
+        <button id="theme-toggle">Dark</button>
     </div>
 
     <div id="main-container">
-      <div id="technical-chart-coins">
-        <div class="technical-chart-coin">
-          <a class="coin-current" data-symbol="BTCUSDT">
-            <img class="coin-sprite-custom" src="assets/img/bitcoin.png" alt="Bitcoin" />
-            <span>Bitcoin</span>
-          </a>
+        <div id="technical-chart-coins">
+            <div class="technical-chart-coin">
+                <a class="coin-current" data-symbol="BTCUSDT">
+                    <img class="coin-sprite-custom" src="assets/img/bitcoin.png" alt="Bitcoin" />
+                    <span>Bitcoin</span>
+                </a>
+            </div>
+            <div class="technical-chart-coin">
+                <a data-symbol="ETHUSDT">
+                    <img class="coin-sprite-custom" src="assets/img/ethereum.png" alt="Ethereum" />
+                    <span>Ethereum</span>
+                </a>
+            </div>
         </div>
-        <div class="technical-chart-coin">
-          <a data-symbol="ETHUSDT">
-            <img class="coin-sprite-custom" src="assets/img/ethereum.png" alt="Ethereum" />
-            <span>Ethereum</span>
-          </a>
-        </div>
-      </div>
 
-      <div id="technical-widget-container">
-        <div id="technical-widget"></div>
-      </div>
+        <div id="technical-widget-container">
+            <div id="technical-widget"></div>
+        </div>
     </div>
 
     <script src="https://s3.tradingview.com/tv.js"></script>
-<script src="assets/js/script.js"></script>
-  </body>
+    <script src="assets/js/script.js"></script>
+</body>
+
 </html>
