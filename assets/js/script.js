@@ -41,7 +41,10 @@ function connectWebSocket(symbol) {
   activeWebSocket.onmessage = function (event) {
     const data = JSON.parse(event.data);
     const price = parseFloat(data.p).toFixed(2);
-    document.title = `${symbol.replace("USDT", "")}: ${price} USDT | Technical Chart`;
+    document.title = `${symbol.replace(
+      "USDT",
+      ""
+    )}: ${price} USDT | Technical Chart`;
   };
 
   activeWebSocket.onerror = function (error) {
@@ -69,25 +72,30 @@ document.querySelectorAll(".technical-chart-coin > a").forEach(function (el) {
 
 document.getElementById("theme-toggle").addEventListener("click", function () {
   document.body.classList.toggle("dark-theme");
-  const currentTheme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+  const currentTheme = document.body.classList.contains("dark-theme")
+    ? "dark"
+    : "light";
   options.theme = currentTheme === "dark" ? "Dark" : "Light";
   localStorage.setItem("theme", currentTheme);
   this.innerText = currentTheme === "dark" ? "Light" : "Dark";
   loadTradingViewWidget();
 });
 
-document.getElementById("timezone-select").addEventListener("change", function () {
-  options.timezone = this.value;
-  localStorage.setItem("timezone", this.value);
-  loadTradingViewWidget();
-});
+document
+  .getElementById("timezone-select")
+  .addEventListener("change", function () {
+    options.timezone = this.value;
+    localStorage.setItem("timezone", this.value);
+    loadTradingViewWidget();
+  });
 
 window.onload = function () {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme) {
     document.body.classList.toggle("dark-theme", savedTheme === "dark");
     options.theme = savedTheme === "dark" ? "Dark" : "Light";
-    document.getElementById("theme-toggle").innerText = savedTheme === "dark" ? "Light" : "Dark";
+    document.getElementById("theme-toggle").innerText =
+      savedTheme === "dark" ? "Light" : "Dark";
   }
 
   const savedTimezone = localStorage.getItem("timezone");
